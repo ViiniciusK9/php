@@ -1,0 +1,6 @@
+2023-08-15 08:33:31 : SELECT * FROM produto WHERE id='7' 
+2023-08-15 08:38:54 : SELECT * FROM produto WHERE id='7' 
+2023-08-15 08:38:56 : SELECT * FROM produto WHERE id='7' 
+2023-08-15 08:41:56 : SELECT * FROM produto WHERE id='7' 
+2023-08-15 08:41:56 : SELECT * FROM produto WHERE id='7' 
+2023-08-15 08:41:56 : UPDATE produto SET id = 7, descricao = 'Chocolate', estoque = 12, preco_custo = 15, preco_venda = 34, codigo_barras = '2364785', data_cadastro = '2023-08-08', origem = 'N'WHERE id=7 

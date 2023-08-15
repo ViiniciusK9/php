@@ -65,7 +65,7 @@ abstract class Record
 
     public function load($id)
     {
-        $sql = "SELECT * FROM {$THIS->GETeNTITY()} WHERE id='{$id}'";
+        $sql = "SELECT * FROM {$this->getEntity()} WHERE id='{$id}'";
 
         if ($conn = Transaction::get())
         {
@@ -81,6 +81,13 @@ abstract class Record
             throw new Exception("Não há transação ativa");
         }
 
+    }
+
+    public static function find($id)
+    {
+        $classname = get_called_class();
+        $ar = new $classname;
+        return $ar->load($id);
     }
 
     public function store()
@@ -157,7 +164,8 @@ abstract class Record
         {
             Transaction::log($sql);
             $result = $conn->query($sql);
-            return $result->fecthObject()->max;
+            $row = $result->fetch();
+            return $row[0];
         }
         else
         {
@@ -183,7 +191,7 @@ abstract class Record
         if (is_string($value) and (!empty($value)))
         {
             // adiciona \ em aspas
-            $value = addcslashes($value);
+            $value = addcslashes($value, "\'");
             return "'{$value}'";
         }
         else if (is_bool($value))

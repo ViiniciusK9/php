@@ -6,9 +6,9 @@ class Connection
     
     public static function open($name)
     {
-        if (file_exists("config/{$name}.ini"))
+        if (file_exists("./config/{$name}.ini"))
         {
-            $db = parse_ini_file("config/{$name}.ini");
+            $db = parse_ini_file("./config/{$name}.ini");
         }
         else
         {

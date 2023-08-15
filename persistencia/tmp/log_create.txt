@@ -1,0 +1,11 @@
+2023-08-15 08:14:43 : SELECT max(id) as max FROM produto 
+2023-08-15 08:18:40 : SELECT max(id) as max FROM produto 
+2023-08-15 08:18:42 : SELECT max(id) as max FROM produto 
+2023-08-15 08:20:02 : SELECT max(id) as max FROM produto 
+2023-08-15 08:20:56 : SELECT max(id) as max FROM produto 
+2023-08-15 08:26:54 : SELECT max(id) as max FROM produto 
+2023-08-15 08:26:54 : INSERT INTO produto(descricao, estoque, preco_custo, preco_venda, codigo_barra, origem, id)VALUES ('Mouse', 10, 50, 120, '1719028347', 'E', 11) 
+2023-08-15 08:27:08 : SELECT max(id) as max FROM produto 
+2023-08-15 08:27:08 : INSERT INTO produto(descricao, estoque, preco_custo, preco_venda, codigo_barras, origem, id)VALUES ('Mouse', 10, 50, 120, '1719028347', 'E', 11) 
+2023-08-15 08:28:51 : SELECT max(id) as max FROM produto 
+2023-08-15 08:28:51 : INSERT INTO produto(descricao, estoque, preco_custo, preco_venda, codigo_barras, data_cadastro, origem, id)VALUES ('Mouse', 10, 50, 120, '1719028347', '2023-08-15', 'E', 12) 
