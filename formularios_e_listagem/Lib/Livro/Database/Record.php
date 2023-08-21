@@ -105,6 +105,7 @@ abstract class Record
             if (empty($this->data['id'])) 
             {
                 $prepared['id'] = $this->getLastId() + 1;
+                $this->data['id'] = $prepared['id'];
             }
 
             $sql = "INSERT INTO {$this->getEntity()}" . 

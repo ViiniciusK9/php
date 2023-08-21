@@ -99,6 +99,32 @@ class FuncionarioForm extends Page
         }
     }
 
+    public function onEdit($param)
+    {
+        try 
+        {
+            Transaction::open('livro');
+
+            $id = isset($param['id']) ? $param['id'] : null;
+
+            $funcionario = Funcionario::find($id);
+            if ($funcionario) 
+            {
+                if (isset($funcionario->idiomas))
+                {
+                    $funcionario->idiomas = explode(',', $funcionario->idiomas);
+                }
+                $this->form->setData($funcionario);
+            }
+
+            Transaction::close();
+        } 
+        catch (Exception $e) 
+        {
+            new Message('error', $e->getMessage());
+        }
+    }
+
     public function onClear()
     {
 
